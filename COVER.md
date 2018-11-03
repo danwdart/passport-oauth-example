@@ -12,62 +12,21 @@ Initial thoughts:
 - I came up across a challenge in that the OAuth application only allowed callbacks to the index page of the application, not for example `/callback`. I hacked this into the index view, but realistically, this would be configurable.
 - I decided to stash the access token into the user and into the frontend, but this could have been done on the "get user details" section of the passport server-side. This way, no more log-ons would be necessary.
 
-This task is to create a very simple web application that presents an unauthenticated landing page, with an option for the user to login via our
-OAuth2 Identity Service, retrieve their user profile and display it in a server-rendered view, enhanced with a custom jQuery plugin.
-
-Technologies
-
-You will be expected to demonstrate a solution using all of the following technologies:
-
-Grunt
-
-HTML5
-Native ES5 JavaScript
-jQuery
-Ajax
 
 
-To display a user interface to allow the user to login and view their profile. Please construct the profile view in the most appropriate way.
 
 Create a basic “standard” page layout using a responsive CSS framework of your choice
 
 Include header and footer components
 
-Create a jQuery plugin to enhance the profile view
-
 Define “enhance” yourself - try to choose an enhancement that adds to the user experience in the most useful way.
-
-Examples:
 
 An analytics plugin that records the path the users mouse and keyboard took
 
-An avatar plugin - convert the users profile image URL into an image control, or look for / generate a public
+- A codebase that installs and runs from just running npm install and node server.js
+Could do a build then
 
-avatar is missing
-
-Identity Service
-
-Test User Credentials
-User ID
-codingtest
-
-Password
-password09876
-
-Obtaining your User Profile
-
-Make a simple GET request to https://staging-auth.wallstreetdocs.com/oauth/userinfo and send your access token via the Authorization header,
-
-e.g.:
-curl -X GET -H "Authorization: Bearer [YOUR_TOKEN]" -H "Cache-Control: no-cache" "https://staging-auth.wall
-streetdocs.com/oauth/userinfo
-
-Deliverables
-
-A codebase that installs and runs from just running npm install and node server.js
 A project README file
-A custom jQuery plugin
-A ZIP file or git repo containing the codebase
 A covering note - explaining choices for approaches and anything else you think might assist the review
 
 Bonus Points
