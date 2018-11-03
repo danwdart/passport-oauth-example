@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Passport OAuth Example</title>
+</head>
+<body>
+    {{{body}}}
+</body>
+{{#if user.accessToken}}
+<script>
+    window.__POE__ = {
+        {{#if endpoints}}
+        endpoints: {{{endpoints}}},
+        {{/if}}
+        accessToken: "{{user.accessToken}}"
+    }
+</script>
+{{/if}}
+<script src="/js/index.js"></script>
+</html>
