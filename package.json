@@ -4,8 +4,10 @@
   "description": "Example OAuth appliction using Passport",
   "main": "index.js",
   "scripts": {
+    "build": "grunt -r esm",
+    "coverage": "nyc npm test",
     "start": "node -r esm server.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "grunt -r esm test"
   },
   "repository": {
     "type": "git",
@@ -23,13 +25,20 @@
     "@babel/preset-env": "^7.1.0",
     "babelify": "^10.0.0",
     "eslint": "^5.8.0",
+    "eslint-plugin-mocha": "^5.2.0",
     "grunt": "^1.0.3",
     "grunt-babel": "^8.0.0",
     "grunt-browserify": "^5.3.0",
     "grunt-contrib-copy": "^1.0.0",
     "grunt-contrib-watch": "^1.1.0",
     "grunt-eslint": "^21.0.0",
-    "load-grunt-tasks": "^4.0.0"
+    "grunt-mocha-test": "^0.13.3",
+    "load-grunt-tasks": "^4.0.0",
+    "mocha": "^5.2.0",
+    "mock-require": "^3.0.2",
+    "nyc": "^13.1.0",
+    "should": "^13.2.3",
+    "sinon": "^7.1.1"
   },
   "dependencies": {
     "@passport-next/passport": "^2.0.0",
