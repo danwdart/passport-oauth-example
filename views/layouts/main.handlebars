@@ -3,9 +3,44 @@
 <head>
     <meta charset="utf-8">
     <title>Passport OAuth Example</title>
+    <link rel="stylesheet" href="/css/index.css"/>
 </head>
 <body>
-    {{{body}}}
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark navbar-fixed-top">
+            <a class="navbar-brand" href="/">Demo</a>
+            <ul class="navbar-nav ml-auto"> 
+                {{! ideally we'd use a helper here }}
+                <li class="nav-item{{#if active_home }} active{{else}}{{/if}}">
+                    <a class="nav-link" href="/">Home</a>
+                </li>
+                <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+                {{#if user.accessToken}}
+                <li class="nav-item">
+                    <a class="nav-link{{#if active_profile}} active{{else}}{{/if}}" href="/profile">Profile</a>
+                </li>
+                {{else}}
+                <li class="nav-item"><a class="nav-link" href="/auth">Log in</a></li>
+                {{/if}}
+            </ul>
+        </nav>
+
+    </header>
+    <main>
+        <div class="row mt-3">
+            <div class="col-8 offset-2">
+                {{{body}}}
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="row">
+            <div class="col-8 offset-2">
+                <p><small>Kopywrong &copy; Whomever</small></p>
+            </div>
+        </div>
+    </footer>
 </body>
 {{#if user.accessToken}}
 <script>
