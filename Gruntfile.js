@@ -3,6 +3,22 @@ module.exports = function(grunt) {
     require('load-grunt-tasks')(grunt);
     
     grunt.initConfig({
+        copy: {
+            
+        },
+        mochaTest: {
+            test: {
+                options: {
+                    reporter: 'spec',
+                    captureFile: 'results.txt',
+                    quiet: false,
+                    clearRequireCache: false,
+                    clearCacheFilter: () => true,
+                    noFail: false
+                },
+                src: ['**/*.spec.js'],
+            }
+        },
         eslint: {
             target: ['Gruntfile.js', 'server.js', 'config/**/*.js', 'lib/**/*.js', 'publid/js/src/**/*.js'],
         },
@@ -39,10 +55,20 @@ module.exports = function(grunt) {
             }
         }
     });
-  
+ 
+    // On watch events, if the changed file is a test file then configure mochaTest to only
+    // run the tests from that file. Otherwise run all the tests
+    var defaultTestSrc = grunt.config('mochaTest.test.src');
+    grunt.event.on('watch', (action, filepath) => {
+        grunt.config('mochaTest.test.src', defaultTestSrc);
+        if (filepath.match('spec')) {
+            grunt.config('mochaTest.test.src', filepath);
+        }
+    });
+
     // I could do these automatically using another plugin but this is for minimalism.
 
-    grunt.registerTask('default', ['eslint', 'browserify:dist']);
-    grunt.registerTask('test', ['eslint']);
+    grunt.registerTask('default', ['eslint', 'mochaTest', 'browserify:dist']);
+    grunt.registerTask('test', ['eslint', 'mochaTest']);
   
 };
