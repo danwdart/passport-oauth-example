@@ -3,8 +3,20 @@ module.exports = function(grunt) {
     require('load-grunt-tasks')(grunt);
     
     grunt.initConfig({
-        copy: {
-            
+        // I could have used css modules here..
+        cssmin: {
+            target: {
+                files: [
+                    {
+                        src: [
+                            'node_modules/bootstrap/dist/css/bootstrap.min.css',
+                            'node_modules/bootstrap/dist/css/bootstrap-theme.min.css',
+                            'public/css/src/index.css'
+                        ],
+                        dest: 'public/css/index.css'
+                    }
+                ]
+            }
         },
         mochaTest: {
             test: {
@@ -44,14 +56,21 @@ module.exports = function(grunt) {
                 }
             }
         },
+        // We could restart the server in watch but in the interests of time we won't
         watch: {
             lint: {
                 files: ['Gruntfile.js', 'server.js', 'config/**/*.js', 'lib/**/*.js', 'publid/js/src/**/*.js'],
                 tasks: ['eslint']
             },
-            compile: {
+            js: {
                 files: ['public/js/src/**/*.js'],
                 tasks: ['eslint', 'browserify']
+            },
+            css: {
+                // this could also be a glob if we had any more
+                // for time we'll use one
+                files: ['public/css/src/index.css'],
+                tasks: ['cssmin']
             }
         }
     });
@@ -68,7 +87,6 @@ module.exports = function(grunt) {
 
     // I could do these automatically using another plugin but this is for minimalism.
 
-    grunt.registerTask('default', ['eslint', 'mochaTest', 'browserify:dist']);
+    grunt.registerTask('default', ['eslint', 'mochaTest', 'cssmin', 'browserify:dist']);
     grunt.registerTask('test', ['eslint', 'mochaTest']);
-  
 };
