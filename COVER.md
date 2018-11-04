@@ -19,10 +19,6 @@ Create a basic “standard” page layout using a responsive CSS framework of yo
 
 Include header and footer components
 
-Define “enhance” yourself - try to choose an enhancement that adds to the user experience in the most useful way.
-
-An analytics plugin that records the path the users mouse and keyboard took
-
 - A codebase that installs and runs from just running npm install and node server.js
 Could do a build then
 
