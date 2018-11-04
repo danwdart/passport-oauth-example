@@ -11,7 +11,7 @@ Initial thoughts:
 - I was a little confused to whether you wanted the web page to be a single page application or a server-rendered application. I would normally work closely with the project requirements, but right now I have to guess. We're using passportjs so we're using handlebars server-side.
 - I came up across a challenge in that the OAuth application only allowed callbacks to the index page of the application, not for example `/callback`. I hacked this into the index view, but realistically, this would be configurable.
 - I decided to stash the access token into the user and into the frontend, but this could have been done on the "get user details" section of the passport server-side. This way, no more log-ons would be necessary.
-
+- I made some basic frontend and backend tests - didn't test everything - but just to show what I would do and that I can do it.
 
 
 
@@ -28,8 +28,3 @@ Could do a build then
 
 A project README file
 A covering note - explaining choices for approaches and anything else you think might assist the review
-
-Bonus Points
-
-Any sort of unit or integration tests!
-
