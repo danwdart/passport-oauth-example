@@ -1,5 +1,9 @@
 module.exports = {
+    "plugins": [
+        "mocha"
+    ],
     "env": {
+        "mocha": true,
         "browser": true,
         "commonjs": true,
         "es6": true,
@@ -29,6 +33,7 @@ module.exports = {
         ],
         "no-console": [
             0
-        ]
+        ],
+        "mocha/no-exclusive-tests": "error"
     }
 };
