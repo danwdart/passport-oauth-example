@@ -11,7 +11,7 @@ export const tabulate = data => ('string' === typeof data) ?
     `
         <table class="table">
     ${Object.entries(data).map(
-        ([key, value]) => `<tr><th>${isNumber(key)?``:startcase(key)}</th><td>${tabulate(value)}</td></tr>`
-    ).join(``)}
+        ([key, value]) => `<tr><th>${isNumber(key)?'':startcase(key)}</th><td>${tabulate(value)}</td></tr>`
+    ).join('')}
         </table>
     `;

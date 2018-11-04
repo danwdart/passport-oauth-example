@@ -1,3 +1,5 @@
+/* global __POE__*/
+
 import {assert, stub} from 'sinon';
 import mock from 'mock-require';
 
@@ -14,11 +16,11 @@ describe('Profile Controller', () => {
     afterEach(() => {
         // clean up
         delete global.__POE__;
-    })
+    });
     it('correctly asks for JSON and renders, with all mocks', () => {
         const gravatar = stub(),
             html = stub(),
-            jQ = stub().callsFake(selector => ({
+            jQ = stub().callsFake(() => ({
                 gravatar,
                 html
             }));
@@ -27,11 +29,11 @@ describe('Profile Controller', () => {
             fake: 'result'
         };
 
-        jQ.getJSON = stub().callsFake(opts => ({
-            then: (res, rej) => res(fakeResult)
+        jQ.getJSON = stub().callsFake(() => ({
+            then: (res) => res(fakeResult)
         }));
 
-        const tabulate = stub().callsFake(result => 'table');
+        const tabulate = stub().callsFake(() => 'table');
 
         mock('jquery', jQ);
         mock('../lib/gravatar', {});

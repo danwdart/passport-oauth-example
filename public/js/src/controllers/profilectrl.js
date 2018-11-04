@@ -1,3 +1,5 @@
+/* global __POE__*/
+
 import $ from 'jquery';
 import '../lib/gravatar';
 import {tabulate} from '../lib/tabulate';
@@ -23,5 +25,5 @@ export const profileCtrl = () => {
         error => {
             console.error(error);
         }
-    )
-}
+    );
+};

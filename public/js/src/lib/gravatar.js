@@ -10,6 +10,6 @@ $.fn.gravatar = function(userData) {
         userData.emails[0] &&
         userData.emails[0].value)}"/>`
     );
-}
+};
 
 export default $;

@@ -28,11 +28,14 @@ module.exports = function(grunt) {
                     clearCacheFilter: () => true,
                     noFail: false
                 },
-                src: ['**/*.spec.js'],
+                src: ['lib/**/*.spec.js', 'public/**/*.spec.js'],
             }
         },
         eslint: {
-            target: ['Gruntfile.js', 'server.js', 'config/**/*.js', 'lib/**/*.js', 'publid/js/src/**/*.js'],
+            options: {
+                fix: true // auto-fix, oh yeah!
+            },
+            target: ['Gruntfile.js', 'server.js', 'config/**/*.js', 'lib/**/*.js', 'public/js/src/**/*.js'],
         },
         browserify: {
             dist: {
@@ -59,7 +62,7 @@ module.exports = function(grunt) {
         // We could restart the server in watch but in the interests of time we won't
         watch: {
             lint: {
-                files: ['Gruntfile.js', 'server.js', 'config/**/*.js', 'lib/**/*.js', 'publid/js/src/**/*.js'],
+                files: ['Gruntfile.js', 'server.js', 'config/**/*.js', 'lib/**/*.js', 'public/js/src/**/*.js'],
                 tasks: ['eslint']
             },
             js: {
