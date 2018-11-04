@@ -7,7 +7,8 @@
     "build": "grunt -r esm",
     "coverage": "nyc npm test",
     "start": "node -r esm server.js",
-    "test": "grunt -r esm test"
+    "test": "grunt -r esm test",
+    "watch": "grunt -r esm watch"
   },
   "repository": {
     "type": "git",
@@ -51,6 +52,7 @@
     "express": "^4.16.4",
     "express-handlebars": "^3.0.0",
     "grunt": "^1.0.3",
+    "grunt-contrib-cssmin": "^3.0.0",
     "handlebars": "^4.0.12",
     "jquery": "^3.3.1",
     "lodash.startcase": "^4.4.0",
