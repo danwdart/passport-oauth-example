@@ -53,7 +53,7 @@
     "express-handlebars": "^3.1.0",
     "grunt": "^1.0.4",
     "grunt-contrib-cssmin": "^3.0.0",
-    "handlebars": "^4.5.3",
+    "handlebars": "^4.1.2",
     "jquery": "^3.4.1",
     "lodash.startcase": "^4.4.0",
     "md5": "^2.2.1",
