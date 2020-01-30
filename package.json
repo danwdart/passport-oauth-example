@@ -22,10 +22,10 @@
   },
   "homepage": "https://github.com/danwdart/passport-oauth-example#readme",
   "devDependencies": {
-    "@babel/core": "^7.7.5",
-    "@babel/preset-env": "^7.7.6",
+    "@babel/core": "^7.8.4",
+    "@babel/preset-env": "^7.8.4",
     "babelify": "^10.0.0",
-    "eslint": "^6.7.2",
+    "eslint": "^7.0.0-alpha.0",
     "eslint-plugin-mocha": "^6.2.2",
     "grunt": "^1.0.4",
     "grunt-babel": "^8.0.0",
@@ -35,15 +35,15 @@
     "grunt-eslint": "^22.0.0",
     "grunt-mocha-test": "^0.13.3",
     "load-grunt-tasks": "^5.1.0",
-    "mocha": "^6.2.2",
+    "mocha": "^7.0.1",
     "mock-require": "^3.0.3",
-    "nyc": "^15.0.0-beta.3",
+    "nyc": "^15.0.0",
     "should": "^13.2.3",
-    "sinon": "^7.5.0"
+    "sinon": "^8.1.1"
   },
   "dependencies": {
-    "@passport-next/passport": "^3.0.1",
-    "@passport-next/passport-oauth2": "^2.0.3",
+    "@passport-next/passport": "^3.1.0",
+    "@passport-next/passport-oauth2": "^2.1.0",
     "body-parser": "^1.19.0",
     "bootstrap": "^4.4.1",
     "client-sessions": "^0.8.0",
@@ -53,10 +53,10 @@
     "express-handlebars": "^3.1.0",
     "grunt": "^1.0.4",
     "grunt-contrib-cssmin": "^3.0.0",
-    "handlebars": "^4.5.3",
+    "handlebars": "^4.7.2",
     "jquery": "^3.4.1",
     "lodash.startcase": "^4.4.0",
     "md5": "^2.2.1",
-    "popper.js": "^1.16.0"
+    "popper.js": "^1.16.1"
   }
 }
